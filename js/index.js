@@ -1,4 +1,3 @@
-function randomQuote() {
   var quotes = [
     {
       author: "― Oscar Wilde",
@@ -33,7 +32,12 @@ function randomQuote() {
         "“If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.”",
     },
   ];
-  var x = Math.floor(Math.random() * quotes.length);
-  document.getElementById("quote").innerHTML = `${quotes[x].quote}`;
-  document.getElementById("author").innerHTML = `${quotes[x].author}`;
+  function randomQuote() {
+    var lastQuote=-1;
+  do{
+      var index = [Math.floor(Math.random() * quotes.length)];
+    }
+  while(lastQuote === index)
+  document.getElementById("quote").innerHTML = `${quotes[index].quote}`;
+  document.getElementById("author").innerHTML = `${quotes[index].author}`;
 }
